@@ -116,6 +116,7 @@ pub fn deserialize_buttons(str_value:String)->Buttons
 }
 #[derive(Serialize, Deserialize)]
 pub struct MotorControl{
+    pub  id:u8,
     pub  motor_1:f32,
     pub  motor_2:f32,
     pub  motor_3:f32,

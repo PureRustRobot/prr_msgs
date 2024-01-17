@@ -116,14 +116,17 @@ pub fn deserialize_buttons(str_value:String)->Buttons
 }
 #[derive(Serialize, Deserialize)]
 pub struct MotorControl{
-    pub st:String,
+    pub  s:u8,
+    pub  t:u8,
     pub  id:u8,
     pub  motor_1:f32,
     pub  motor_2:f32,
     pub  motor_3:f32,
     pub  motor_4:f32,
-    pub en:String
+    pub  e:u8,
+    pub  n:u8,
 }
+
 pub fn serialize_motorcontrol(value:&MotorControl)->String
 {
     serde_json::to_string(value).unwrap()

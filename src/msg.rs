@@ -46,3 +46,34 @@ pub fn deserialize_cmdvel(str_value:String)->CmdVel
      let result:CmdVel = serde_json::from_str(&str_value).unwrap();
     result
 }
+#[derive(Serialize, Deserialize)]
+pub struct JoyStick{
+    pub  left_x:f32,
+    pub  left_y:f32,
+    pub  right_x:f32,
+    pub  right_y:f32,
+}
+pub fn serialize_joystick(value:&JoyStick)->String
+{
+    serde_json::to_string(value).unwrap()
+}
+pub fn deserialize_joystick(str_value:String)->JoyStick
+{
+     let result:JoyStick = serde_json::from_str(&str_value).unwrap();
+    result
+}
+#[derive(Serialize, Deserialize)]
+pub struct Angular{
+    pub  x:f32,
+    pub  y:f32,
+    pub  z:f32,
+}
+pub fn serialize_angular(value:&Angular)->String
+{
+    serde_json::to_string(value).unwrap()
+}
+pub fn deserialize_angular(str_value:String)->Angular
+{
+     let result:Angular = serde_json::from_str(&str_value).unwrap();
+    result
+}

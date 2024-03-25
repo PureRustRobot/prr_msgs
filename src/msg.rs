@@ -1,6 +1,23 @@
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
+pub struct Motor{
+    pub  power:f32,
+}
+
+impl Motor {
+    pub fn serialize(value:&Motor)->String
+    {
+        serde_json::to_string(value).unwrap()
+    }
+    pub fn deserialize(str_value:String)->Motor
+    {
+        let result:Wheel = serde_json::from_str(&str_value).unwrap();
+        result
+    }
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct Wheel{
     pub  front_left:f32,
     pub  front_right:f32,

@@ -12,7 +12,7 @@ impl Motor {
     }
     pub fn deserialize(str_value:String)->Motor
     {
-        let result:Wheel = serde_json::from_str(&str_value).unwrap();
+        let result:Motor = serde_json::from_str(&str_value).unwrap();
         result
     }
 }
